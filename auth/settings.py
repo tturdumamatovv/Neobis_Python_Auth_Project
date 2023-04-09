@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import datetime
 from pathlib import Path
 import os
 
@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     # Installed & Created
     'authentication',
     'rest_framework',
-    'rest_framework_simplejwt',
+    'rest_framework_simplejwt.token_blacklist',
+    'drf_yasg',
 
 ]
 
@@ -93,6 +94,11 @@ REST_FRAMEWORK = {
     )
 }
 
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=10),
+    'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=1),
+}
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -135,15 +141,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
-# Host for sending e-mail.
-EMAIL_HOST = 'localhost'
-
-# Port for sending e-mail.
-EMAIL_PORT = 1025
-
-# Optional SMTP authentication information for EMAIL_HOST.
-EMAIL_HOST_USER = 'muki2019@mail.ru'
-EMAIL_HOST_PASSWORD = 'LeB0dsQDFHDKerV4fPta'
-EMAIL_USE_TLS = False
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'muha0710077@gmail.com'
+EMAIL_HOST_PASSWORD = 'xukzrvbdqxfaqpcm'
