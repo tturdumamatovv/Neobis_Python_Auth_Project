@@ -1,6 +1,7 @@
 Описание проекта
 В проекте реализована регистрация, авторизация пользователей по принципам rest
 
+
 Установка
 Склонируй репозиторий используя команду
 git@github.com:tturdumamatovv/Neobis_Python_Auth_Project.git
@@ -11,6 +12,7 @@ source <name of your environment>/bin/activate
 Установи зависимости
 pip install -r requirements.txt 
 
+  
 Сделай миграции
 
   ./manage.py migrate
