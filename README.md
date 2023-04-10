@@ -18,3 +18,4 @@ pip install -r requirements.txt
 ./manage.py runserver 
 или
  python3 manage.py runserver 
+
